@@ -16,6 +16,16 @@ html {
     font-size: 62.5%;
 }
 
+.section-heading {
+    font-size: 12rem;
+    font-weight: 900;
+    text-align: center;
+    color: #fff;
+    text-transform: capitalize;
+    letter-spacing: .5rem;
+    text-shadow: .3rem .3rem .3rem #000;
+}
+
 /* Section 1 */
 
 .section-1 {
@@ -26,16 +36,6 @@ html {
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-}
-
-.section-heading {
-    font-size: 12rem;
-    font-weight: 900;
-    text-align: center;
-    color: #fff;
-    text-transform: capitalize;
-    letter-spacing: .5rem;
-    text-shadow: .3rem .3rem .3rem #000;
 }
 
 .section-1-icons i {
@@ -50,4 +50,199 @@ html {
 .section-1-icons i.change {
     transform: translate(-50%, -50%) scale(1);
     transition: transform .3s .3s;
+}
+
+/* Section 2 */
+
+.section-2 {
+    width: 100%;
+    height: 100vh;
+    background: #222;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10rem 0;
+}
+
+.cards-container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.card {
+    width: 30rem;
+    background: #a79a2d;
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 1rem 1rem 1rem #000;
+    position: relative;
+    transform: rotateY(20deg) skewX(-2deg);
+    transition: transform .5s, box-shadow .5s;
+}
+
+.card:hover {
+    transform: rotateY(20deg) skewX(-2deg) translateY(-3rem);
+    box-shadow: 2rem 2rem 2rem #000;
+}
+
+.card::before {
+    content: "";
+    height: 100%;
+    width: 1rem;
+    background: #817824;
+    position: absolute;
+    top: 0;
+    left: -1rem;
+    transform: skewY(45deg);
+    transform-origin: right;
+    box-shadow: -.1rem -.1rem .1rem #000;
+}
+
+.card::after {
+    content: "";
+    height: 1rem;
+    width: 100%;
+    background: #8f8317;
+    position: absolute;
+    top: -1rem;
+    left: 0;
+    transform: skewX(45deg);
+    transform-origin: bottom;
+    box-shadow: -.1rem -.1rem .1rem #000;
+}
+
+.card-img {
+    width: 100%;
+}
+
+.card-name {
+    font-size: 3rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: .5rem;
+    color: #111;
+    margin: 2rem 0;
+    text-shadow: .15rem .15rem .15rem #000;
+}
+
+.card-btn {
+    width: 70%;
+    background: #111;
+    color: #888;
+    border-radius: 5rem;
+    font-size: 1.5rem;
+    font-weight: 800;
+    text-transform: capitalize;
+    letter-spacing: .2rem;
+    border: none;
+    padding: .5rem 0;
+    cursor: pointer;
+    box-shadow: -.2rem -.2rem .2rem #000;
+}
+
+/* Section 3 */
+
+.section-3 {
+    background: #333;
+    padding: 5rem 0;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 10rem;
+}
+
+.gallery-link {
+    position: relative;
+    margin: 4rem 1rem;
+}
+
+.gallery-link::before {
+    content: "";
+    position: absolute;
+    top: 2vw;
+    left: 80%;
+    z-index: 10;
+    width: .2rem;
+    height: 0;
+    background: #fff;
+    transition: height .5s;
+}
+
+.gallery-link:hover::before {
+    height: 80%;
+}
+
+.gallery-link::after {
+    content: "";
+    position: absolute;
+    top: 30%;
+    left: 2rem;
+    width: 0;
+    height: .2rem;
+    background: #fff;
+    transition: width .5s;
+}
+
+.gallery-link:hover::after {
+    width: 90%;
+}
+
+.food-img {
+    width: 24vw;
+    height: 15vw;
+    object-fit: cover;
+    box-shadow: .3rem .3rem .1rem #e92929, .5rem .5rem .1rem #a2e946, .7rem .7rem .1rem #297ce9, .9rem .9rem .1rem #e92999;
+    transition: all .5s;
+}
+
+.gallery-link:hover .food-img {
+    box-shadow: 1rem 1rem .1rem #e92929, 2rem 2rem .1rem #a2e946, 3rem 3rem .1rem #297ce9, 4rem 4rem .1rem #e92999;
+    filter: blur(.5rem);
+    opacity: .5;
+    transform: scale(1.1);
+}
+
+.food-name {
+    position: absolute;
+    left: 3rem;
+    top: 3rem;
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    color: #fff;
+    width: 0;
+    overflow: hidden;
+    transition: width .3s;
+}
+
+.gallery-link:hover .food-name {
+    width: 100%;
+    transition: width 1.5s .5s;
+}
+
+.food-description {
+    position: absolute;
+    bottom: 3vw;
+    left: 2rem;
+    width: 70%;
+    font-size: 1.5rem;
+    font-weight: 300;
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+    color: #fff;
+    opacity: 0;
+    transition: opacity .3s;
+}
+
+.gallery-link:hover .food-description {
+    opacity: 1;
+    transition: opacity 1s 1s;
 }
